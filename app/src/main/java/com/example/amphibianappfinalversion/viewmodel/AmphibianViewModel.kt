@@ -16,7 +16,7 @@ class AmphibianViewModel (private val repository: AmphibianRepository) : ViewMod
         loadAmphibians()
     }
 
-    private fun loadAmphibians() {
+    fun loadAmphibians() {
         viewModelScope.launch {
             uiState = uiState.copy(isLoading = true)
             try {

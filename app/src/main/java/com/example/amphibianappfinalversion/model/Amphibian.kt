@@ -1,12 +1,11 @@
 package com.example.amphibianappfinalversion.model
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
+
 data class Amphibian(
     val name: String,
     val type: String,
     val description: String,
-    @SerialName("img_src") val imgSrc: String
+    @SerializedName("img_src") val imgSrc: String
 )

@@ -10,7 +10,6 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
-// Define your color palettes
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
     secondary = PurpleGrey80,
@@ -26,11 +25,9 @@ private val LightColorScheme = lightColorScheme(
 @Composable
 fun AmphibiansAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
-    // Determine the color scheme based on the theme and Android version
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
             val context = LocalContext.current
@@ -40,11 +37,10 @@ fun AmphibiansAppTheme(
         else -> LightColorScheme
     }
 
-    // Provide the MaterialTheme with the determined color scheme
     MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,
-        shapes = Shapes, // Assuming Shapes is defined elsewhere
+        shapes = Shapes,
         content = content
     )
 }
